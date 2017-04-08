@@ -1,0 +1,39 @@
+<chapter id="configuration">
+  <title>Configuration</title>
+  <sect1 id="directory-structure">
+    <title>Directory structure</title>
+    <programlisting language="bash">
+    book
+    |-- pom.xml
+    `-- src
+        `-- main
+            `-- documentation
+                `-- docbook
+                |   |-- book.xml
+                |   |-- template_chapter.xml
+                |   `-- chapters
+                |       |-- chapter_1.xml
+                |       |-- chapter_2.xml
+                |       |-- chapter_n.xml
+                |       `-- media
+                |           |-- cover.png
+                |           `-- logo.png
+                |-- fonts
+                |-- xsd
+                `-- xslt
+                    `-- docbook.xsl
+</programlisting>
+    <para>
+      Probably everything you ever need to write a book is within the
+      <ulink url="https://gitlab.com/phoen1x/livingfire-docbook/blob/master/book/src/main/documentation/docbook">livingfire-docbook/
+      book/src/main/documentation/docbook</ulink> directory. Here you
+      can find the
+      <ulink url="https://gitlab.com/phoen1x/livingfire-docbook/blob/master/book/src/main/documentation/docbook/book.xml">book.xml</ulink>
+      and a templates for your own content. To tweak the style of your
+      book alter
+      <ulink url="https://gitlab.com/phoen1x/livingfire-docbook/blob/master/book/src/main/documentation/xslt/docbook.xsl">docbook.xsl</ulink>
+      and
+      <ulink url="https://gitlab.com/phoen1x/livingfire-docbook/blob/master/book/pom.xml">pom.xml</ulink>.
+    </para>
+  </sect1>
+</chapter>

@@ -1,0 +1,11 @@
+<chapter id="gitlab-wiki-markdown-pandoc">
+  <title>Gitlab Wiki / Markdown / Pandoc</title>
+  <para>
+    To manually convert Markdown you need to install
+    <ulink url="http://pandoc.org/">pandoc</ulink>
+  </para>
+  <programlisting language="bash">
+# apt-get install pandoc
+pandoc --chapters -t docbook --output page.xml page.md
+</programlisting>
+</chapter>

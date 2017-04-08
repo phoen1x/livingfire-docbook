@@ -1,0 +1,143 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>de.livingfire</groupId>
+    <artifactId>livingfire-docbook</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <name>livingfire-docbook</name>
+    <description>builds docbook</description>
+
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <documentation.folder>${basedir}/src/main/documentation</documentation.folder>
+    </properties>
+
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/junit/junit -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.assertj/assertj-core -->
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>3.6.2</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.assertj/assertj-core-java8 -->
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core-java8</artifactId>
+            <version>1.0.0m1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.agilejava.docbkx</groupId>
+                <artifactId>docbkx-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>docbook-building</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>generate-pdf</goal>
+                            <!-- <goal>generate-html</goal>
+                            <goal>generate-xhtml</goal>
+                            <goal>generate-rtf</goal>
+                            <goal>generate-epub</goal>
+                            <<goal>generate-manpages</goal>
+                            <goal>generate-eclipse</goal> -->
+                        </goals>
+                        <configuration>
+                            <!-- <draftMode>yes</draftMode> -->
+                        </configuration>
+                    </execution>
+                </executions>
+                <configuration>
+                    <sourceDirectory>${documentation.folder}/docbook</sourceDirectory>
+                    <includes>book.xml</includes>
+                    <generatedSourceDirectory>${project.build.directory}/docbkx/generated</generatedSourceDirectory>
+                    <xincludeSupported>true</xincludeSupported>
+                    <highlightSource>1</highlightSource>
+                    <paperType>A4</paperType>
+                    <fop1Extensions>1</fop1Extensions>
+                    <foCustomization>${documentation.folder}/xslt/docbook.xsl</foCustomization>
+                    <bodyFontFamily>DejaVuSerif</bodyFontFamily>
+                    <chunkedOutput>false</chunkedOutput>
+                    <fonts>
+                        <font>
+                            <name>DejaVuSerif</name>
+                            <style>normal</style>
+                            <weight>normal</weight>
+                            <embedFile>${documentation.folder}/fonts/DejaVuSerif.ttf</embedFile>
+                            <metricsFile>${documentation.folder}/fonts/DejaVuSerif.xml</metricsFile>
+                        </font>
+                    </fonts>
+                    <preProcess>
+                        <copy todir="${project.build.directory}/docbkx/generated/chapters/media">
+                            <fileset dir="${documentation.folder}/docbook/chapters/media/" />
+                        </copy>
+                        <!--
+                        <copy todir="${project.build.directory}/docbkx/epub/media">
+                            <fileset dir="${documentation.folder}/docbook/chapters/media/" />
+                        </copy>
+                        <copy todir="${project.build.directory}/docbkx/html/media">
+                            <fileset dir="${documentation.folder}/docbook/chapters/media/" />
+                        </copy>
+                        <copy todir="${project.build.directory}/docbkx/xhtml/media">
+                            <fileset dir="${documentation.folder}/docbook/chapters/media/" />
+                        </copy>
+                        <copy todir="${project.build.directory}/docbkx/eclipse/media">
+                            <fileset dir="${documentation.folder}/docbook/chapters/media/" />
+                        </copy>
+                        <copy todir="${project.build.directory}/site/media">
+                            <fileset dir="${documentation.folder}/docbook/chapters/media/" />
+                        </copy>
+                        -->
+                    </preProcess>
+                    <!--
+                    <postProcess>
+                        <copy todir="${project.build.directory}/site/media">
+                            <fileset dir="${project.build.directory}/docbkx/pdf/" />
+                        </copy>
+                        <copy todir="${project.build.directory}/site/book_pdf">
+                            <fileset dir="${project.build.directory}/docbkx/pdf/" />
+                        </copy>
+                        <copy todir="${project.build.directory}/site/book_html">
+                            <fileset dir="${project.build.directory}/docbkx/eclipse" />
+                        </copy>
+                    </postProcess>
+                    -->
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>net.sf.docbook</groupId>
+                        <artifactId>docbook-xml</artifactId>
+                        <version>5.0-all</version>
+                        <classifier>resources</classifier>
+                        <type>zip</type>
+                        <scope>runtime</scope>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+</project>

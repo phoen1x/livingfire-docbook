@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<book version="5.0" xsi:schemaLocation="http://docbook.org/ns/docbook http://docbook.org/xml/5.0/xsd/docbook.xsd" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <xi:include href="info.xml" />
+    <xi:include href="chapters/introduction.md.xml" />
+    <xi:include href="chapters/configuration.md.xml" />
+    <xi:include href="chapters/get-started.md.xml" />
+    <xi:include href="chapters/plantuml.md.xml" />
+    <xi:include href="chapters/markdown.md.xml" />
+    <xi:include href="chapters/usage-maven.md.xml" />
+    <xi:include href="chapters/note.md.xml" />
+</book>

@@ -1,0 +1,19 @@
+<chapter id="usage-without-docker">
+  <title>Usage without Docker</title>
+  <sect1 id="maven">
+    <title>Maven</title>
+    <programlisting language="bash">
+# install Java -- https://java.com/en/download/
+git clone https://phoen1x@gitlab.com/phoen1x/livingfire-docbook.git
+cd livingfire-docbook
+
+# Linux
+./mvnw clean site
+xdg-open target/docbkx/pdf/book.pdf
+
+# Windows
+mvnw.cmd clean site
+# Open target/docbkx/pdf/book.pdf in file browser
+</programlisting>
+  </sect1>
+</chapter>

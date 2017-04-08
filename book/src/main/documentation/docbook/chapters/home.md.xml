@@ -1,0 +1,50 @@
+<chapter id="read-as-pdf">
+  <title>Read as PDF</title>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <ulink url="https://gitlab.com/phoen1x/livingfire-docbook/raw/master/book.pdf">Download</ulink>
+      </para>
+    </listitem>
+  </itemizedlist>
+</chapter>
+<chapter id="read-as-wiki">
+  <title>Read as Wiki</title>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <ulink url="introduction">Introduction</ulink>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <ulink url="configuration">Project configuration</ulink>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <ulink url="get-started">Get started with Docbook</ulink>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <ulink url="markdown">Gitlab Wiki / Markdown / Pandoc</ulink>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <ulink url="plantuml">Plantuml</ulink>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <ulink url="usage-maven">Usage without Docker</ulink>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <ulink url="note">Note</ulink>
+      </para>
+    </listitem>
+  </itemizedlist>
+</chapter>

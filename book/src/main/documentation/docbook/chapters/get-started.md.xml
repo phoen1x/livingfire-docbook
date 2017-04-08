@@ -1,0 +1,47 @@
+<chapter id="writing-docbook">
+  <title>Writing Docbook</title>
+  <para>
+    You can use a Markdown Wiki like
+    <ulink url="https://github.com/gollum/gollum/wiki">Gollumn</ulink>
+    to create your docbook chapters and then further refine the document
+    using these links:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <ulink url="https://workaround.org/docbook-reference/">DocBook
+        Cheat Sheet</ulink>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <ulink url="http://www.vogella.com/tutorials/DocBook/article.html">DocBook
+        Tutorial</ulink>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <ulink url="http://bikesutorrent.weebly.com/blog/generate-pdf-docbookdownload-free-software-programs-online">DocBook
+        Information</ulink>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <ulink url="http://www.sagehill.net/docbookxsl/PrintOutput.html">Page
+        layout</ulink>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <ulink url="http://www.sagehill.net/docbookxsl/PrintHeaders.html">Headers
+        and Footers</ulink>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <ulink url="http://docbkx-tools.sourceforge.net/">Maven +
+        Docbook</ulink>
+      </para>
+    </listitem>
+  </itemizedlist>
+</chapter>

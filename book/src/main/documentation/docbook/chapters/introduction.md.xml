@@ -1,0 +1,64 @@
+<chapter id="introduction">
+  <title>Introduction</title>
+  <para>
+    As a software engineer I love to work with source code that comes
+    with Unit Tests and a well written documentation. Markdown is surely
+    a good way to write your documents. But sometimes it comes in handy
+    to have a shiny PDF to store offline, send via email or print in
+    high resolution. For those cases Docbook (co-founder
+    <ulink url="https://www.oreilly.com/">O'Reilly Media</ulink>) is a
+    good solution because it supports different output formats like pdf,
+    epub or html. My project
+    <ulink url="https://gitlab.com/phoen1x/livingfire-docbook">livingfire-docbook</ulink>
+    shows a easy way to get started with Docbook and alter this
+    <ulink url="https://gitlab.com/phoen1x/livingfire-docbook/raw/master/book.pdf">example</ulink>
+    for your own needs. The software can also covert Markdown to Docbook
+    using <ulink url="http://pandoc.org/">pandoc</ulink> and combine
+    multiple Markdown files like a GitLab Wiki into one PDF. In addtion
+    to that you can write UML diagrams in
+    <ulink url="http://plantuml.com/">PlantUML</ulink> and have them
+    rendered into pictures in your book.
+  </para>
+  <sect1 id="prerequirements">
+    <title>Prerequirements</title>
+    <para>
+      Make sure you have a working
+      <ulink url="https://docs.docker.com/engine/installation/">Docker</ulink>
+      and
+      <ulink url="https://docs.docker.com/compose/install/">docker-compose</ulink>
+      environment.
+    </para>
+  </sect1>
+  <sect1 id="usage">
+    <title>Usage</title>
+    <programlisting language="bash">
+# download
+git clone https://phoen1x@gitlab.com/phoen1x/livingfire-docbook.git
+cd livingfire-docbook
+
+# start project
+docker-compose up -d
+
+# docbook to pdf
+docker-compose exec docbook /book/convertBook.sh
+xdg-open book/target/docbkx/pdf/book.pdf
+
+# import GitLab wiki
+cd tmp/wiki
+git init
+git remote add origin https://gitlab.com/phoen1x/livingfire-docbook.wiki.git
+git pull
+rm -rf .git
+cd ../..
+
+# markdown to docbook
+docker-compose exec docbook /book/convertPlantuml.sh
+docker-compose exec docbook /book/convertWiki2Docbook.sh
+xdg-open book/target/docbkx/pdf/book.pdf
+
+# stop project
+docker-compose down
+cat book/target/docbkx/pdf/book.pdf &gt; book.pdf
+</programlisting>
+  </sect1>
+</chapter>

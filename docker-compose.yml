@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+
+    docbook:
+        build: .
+        env_file:
+            - ".env"
+        volumes:
+            - "$PWD/book:/book"
+            - "$PWD/plantuml:/plantuml"
+            - "$PWD/tmp/m2:/root/.m2"
+            - "$PWD/tmp/wiki:/wiki"

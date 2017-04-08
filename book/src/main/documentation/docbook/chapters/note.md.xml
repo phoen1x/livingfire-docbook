@@ -1,0 +1,12 @@
+<chapter id="note">
+  <title>Note</title>
+  <para>
+    This book was written in a
+    <ulink url="https://gitlab.com/phoen1x/livingfire-docbook/wikis/home">GitLab
+    Wiki</ulink>. Feel free to add your improvements via
+    <ulink url="https://gitlab.com/phoen1x/livingfire-docbook">Merge
+    Request</ulink> or open an
+    <ulink url="https://gitlab.com/phoen1x/livingfire-docbook/issues">issue</ulink>
+    if you find a bug.
+  </para>
+</chapter>

@@ -1,0 +1,62 @@
+<chapter id="plantuml">
+  <title>Plantuml</title>
+  <para>
+    The project is also capable of converting
+    <ulink url="http://plantuml.com/">PlantUML</ulink>
+  </para>
+  <programlisting>
+@startuml
+Bob   -&gt;  Alice : Hello Alice
+Alice -&gt;  Bob   : Hello Bob
+@enduml
+</programlisting>
+  <para>
+    into an image
+  </para>
+  <figure>
+    <title>uml</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="/wiki/media/6512FACBE84F4E5ECF8B3239EFDEEBCA.png" width="5cm" />
+      </imageobject>
+      <textobject><phrase>uml</phrase></textobject>
+    </mediaobject>
+  </figure>
+  <sect1 id="advanced-example">
+    <title>Advanced example</title>
+    <programlisting>
+@startuml
+Script -&gt; Markdown: get file content
+Script  -&gt; Script : text multiline grep for Plantuml CONTENT
+loop CONTENT found
+    Script  -&gt; Script : generate hash from CONTENT -- 693d9a0698aff95c
+    Script  -&gt; 693d9a0698aff95c.puml: save CONTENT to 693d9a0698aff95c.puml
+    Script  -&gt; Markdown: replace CONTENT with ![uml](693d9a0698aff95c.png)
+end
+Script  -&gt; Plantuml: convert media/*.puml to media/*.png
+Plantuml -&gt; 693d9a0698aff95c.puml: get
+Plantuml -&gt; 693d9a0698aff95c.png: create
+@enduml
+</programlisting>
+    <figure>
+      <title>Sequence Diagram</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="media/sequence.png"/>
+        </imageobject>
+        <textobject><phrase>Sequence Diagram</phrase></textobject>
+      </mediaobject>
+    </figure>
+    <para>
+      More information on Plantuml can be found at the
+      <ulink url="http://plantuml.com/">PlantUML website</ulink>.
+    </para>
+  </sect1>
+  <sect1 id="converter">
+    <title>Converter</title>
+    <para>
+      The source code of my converter can be found
+      <ulink url="https://gitlab.com/phoen1x/livingfire-docbook/blob/master/book/src/main/java/de/livingfire/PlantumlConverter.java">here</ulink>.
+    </para>
+  </sect1>
+</chapter>
