@@ -3,7 +3,8 @@ version: '3'
 services:
 
     docbook:
-        build: .
+        image: phoen1x/livingfire-docbook
+        # build: .
         env_file:
             - ".env"
         volumes:
