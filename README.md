@@ -1,25 +1,29 @@
 # livingfire-docbook
 
-Combine Markdown files (e.g. GitLab Wiki) in a [high quality PDF](https://gitlab.com/phoen1x/livingfire-docbook/raw/master/book.pdf)
+Write your documents with Mardown in a [GitHub Page](https://pages.github.com/), [GitLab Wiki](https://about.gitlab.com/features/), [Golumn Wiki](https://github.com/gollum/gollum/wiki), ... and turn them with [DocBook](http://docbook.org/) into into a [high quality PDF](https://gitlab.com/phoen1x/livingfire-docbook/raw/master/book.pdf)
 
 ## Usage
+
+See [project page](https://www.livingfire.de/docbook/)
+
+## Quick Start
 
 Make sure you have a working [Docker](https://docs.docker.com/engine/installation/) and
 [docker-compose](https://docs.docker.com/compose/install/) environment.
 
 ```bash
-# download
-git clone https://phoen1x@gitlab.com/phoen1x/livingfire-docbook.git
+# download project files
+git clone https://gitlab.com/phoen1x/livingfire-docbook.git
 cd livingfire-docbook
 
-# start project
+# start livingfire-docbook
 docker-compose up -d
 
-# docbook to pdf
+# convert docbook to pdf
 docker-compose exec docbook /book/convertBook.sh
 xdg-open book/target/docbkx/pdf/book.pdf
 
-# import GitLab wiki
+# write Markdown or import wiki
 cd tmp/wiki
 git init
 git remote add origin https://gitlab.com/phoen1x/livingfire-docbook.wiki.git
@@ -27,14 +31,14 @@ git pull
 rm -rf .git
 cd ../..
 
-# markdown to docbook
+# convert plantuml to images - http://plantuml.com/
 docker-compose exec docbook /book/convertPlantuml.sh
+
+# convert markdown to docbook
 docker-compose exec docbook /book/convertWiki2Docbook.sh
 xdg-open book/target/docbkx/pdf/book.pdf
 
-# stop project
+# stop  livingfire-docbook and get PDF
 docker-compose down
 cat book/target/docbkx/pdf/book.pdf > book.pdf
 ```
-
-See [project page](https://gitlab.com/phoen1x/livingfire-docbook/wikis/home) for more information.

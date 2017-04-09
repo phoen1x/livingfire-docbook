@@ -42,7 +42,7 @@ Plantuml -&gt; 693d9a0698aff95c.png: create
       <title>Sequence Diagram</title>
       <mediaobject>
         <imageobject>
-          <imagedata fileref="media/sequence.png"/>
+          <imagedata fileref="media/sequence.png" />
         </imageobject>
         <textobject><phrase>Sequence Diagram</phrase></textobject>
       </mediaobject>

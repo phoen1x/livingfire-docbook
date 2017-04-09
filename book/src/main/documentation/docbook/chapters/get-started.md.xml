@@ -1,10 +1,14 @@
 <chapter id="writing-docbook">
   <title>Writing Docbook</title>
   <para>
-    You can use a Markdown Wiki like
-    <ulink url="https://github.com/gollum/gollum/wiki">Gollumn</ulink>
-    to create your docbook chapters and then further refine the document
-    using these links:
+    Write your documents with Mardown in a
+    <ulink url="https://pages.github.com/">GitHub Page</ulink>,
+    <ulink url="https://about.gitlab.com/features/">GitLab Wiki</ulink>,
+    <ulink url="https://github.com/gollum/gollum/wiki">Golumn
+    Wiki</ulink>, ... and turn them with
+    <ulink url="http://docbook.org/">DocBook</ulink> into into a
+    <ulink url="https://gitlab.com/phoen1x/livingfire-docbook/raw/master/book.pdf">high
+    quality PDF</ulink> using these links:
   </para>
   <itemizedlist spacing="compact">
     <listitem>
@@ -17,12 +21,6 @@
       <para>
         <ulink url="http://www.vogella.com/tutorials/DocBook/article.html">DocBook
         Tutorial</ulink>
-      </para>
-    </listitem>
-    <listitem>
-      <para>
-        <ulink url="http://bikesutorrent.weebly.com/blog/generate-pdf-docbookdownload-free-software-programs-online">DocBook
-        Information</ulink>
       </para>
     </listitem>
     <listitem>
