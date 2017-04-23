@@ -1,0 +1,12 @@
+@startuml
+Kanboard -> Plugin: send markdown
+Plugin -> Plugin: preg_match plantuml content
+    loop plantuml content
+        Plugin -> Plugin: generate content hash 693d9a0698aff95c
+        Plugin -> Plantuml: send text
+        Plantuml -> Plugin: send image
+        Plugin -> Plugin: save image to /images/693d9a0698aff95c.png
+        Plugin -> Plugin: preg_replace ![uml](/images/693d9a0698aff95c.png)
+    end
+Plugin -> Kanboard: send markdown with images
+@enduml

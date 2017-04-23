@@ -22,8 +22,8 @@ Alice -&gt;  Bob   : Hello Bob
       <textobject><phrase>uml</phrase></textobject>
     </mediaobject>
   </figure>
-  <sect1 id="advanced-example">
-    <title>Advanced example</title>
+  <sect1 id="example---replace-markdown-in-file-system">
+    <title>example - Replace Markdown in file system</title>
     <programlisting>
 @startuml
 Script -&gt; Markdown: get file content
@@ -43,6 +43,32 @@ Plantuml -&gt; 693d9a0698aff95c.png: create
       <mediaobject>
         <imageobject>
           <imagedata fileref="media/sequence.png" />
+        </imageobject>
+        <textobject><phrase>Sequence Diagram</phrase></textobject>
+      </mediaobject>
+    </figure>
+  </sect1>
+  <sect1 id="example---replace-markdown-online">
+    <title>example - Replace Markdown online</title>
+    <programlisting>
+@startuml
+Kanboard -&gt; Plugin: send markdown
+Plugin -&gt; Plugin: preg_match plantuml content
+    loop plantuml content
+        Plugin -&gt; Plugin: generate content hash 693d9a0698aff95c
+        Plugin -&gt; Plantuml: send text
+        Plantuml -&gt; Plugin: send image
+        Plugin -&gt; Plugin: save image to /images/693d9a0698aff95c.png
+        Plugin -&gt; Plugin: preg_replace ![uml](/images/693d9a0698aff95c.png)
+    end
+Plugin -&gt; Kanboard: send markdown with images
+@enduml
+</programlisting>
+    <figure>
+      <title>Sequence Diagram</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="media/sequence2.png" />
         </imageobject>
         <textobject><phrase>Sequence Diagram</phrase></textobject>
       </mediaobject>
